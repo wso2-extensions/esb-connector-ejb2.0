@@ -5,6 +5,9 @@ Pre-requisites:
  - Maven 3.x
  - Java 1.7 or above
  - Jboss 5.1
+ - The org.wso2.esb.integration.integration-base project is required. The test suite has been configured to download this project automatically. If the automatic download fails, download the following project and compile it using the mvn clean install command to update your local repository:
+        https://github.com/wso2-extensions/esb-integration-base
+
 
 Tested Platform:
  - UBUNTU 14.04
@@ -17,12 +20,12 @@ jbossall-client.jar
 
 STEPS:
 
- 1. Make sure the ESB 4.9.0 zip file with latest patches available at "{CONNECTOR_HOME}/repository/"
+ 1. Make sure the ESB 4.9.0 zip file available at "{EJB_HOME}/repository/"
 
  2. Integration test written based on Jboss 5.1 so Download jboss server from http://sourceforge.net/projects/jboss/files/JBoss/JBoss-5.1.0.GA/
 
- 3. get the Dependency jars file from "{EJB_HOME}/src/test/resource/ESB/jar/"
+ 3. Get the Dependency jars file from "{EJB_HOME}/src/test/resource/ESB/jar/"
 
- 4. add Dependency jar files into "{ESB_HOME}/repository/component/lib"
+ 4. Add Dependency jar files into "{ESB_HOME}/repository/component/lib"
 
- 5. go to "{EJB_HOME}/" and type "mvn clean install" to test and build
+ 5. Go to "{EJB_HOME}/" and type "mvn clean install" to test and build
