@@ -57,7 +57,7 @@ public class Ejb2ConnectorIntegrationTest extends ConnectorIntegrationTestBase {
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURL(methodName)
                 , "GET", esbRequestHeadersMap, "stateless.json");
         Assert.assertEquals(esbRestResponse.getBody().get("Result")
-                , checkStateless.getFromStateless(ctx));
+                , CheckStateless.getFromStateless(ctx));
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
     }
 
@@ -67,8 +67,7 @@ public class Ejb2ConnectorIntegrationTest extends ConnectorIntegrationTestBase {
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURL(methodName)
                 , "GET", esbRequestHeadersMap, "stateful.json");
         Assert.assertEquals(esbRestResponse.getBody().get("Result")
-                , checkStateful.getFromStaeful(ctx));
+                , CheckStateful.getFromStaeful(ctx));
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
     }
-
 }

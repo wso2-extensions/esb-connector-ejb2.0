@@ -16,25 +16,31 @@ package org.wso2.carbon.connector.integration.test.ejb2;/*
  * specific language governing permissions and limitations
  * under the License.
  */
-import com.ejb2connector.stateful.Hello;
-import com.ejb2connector.stateful.HelloHome;
+
+import com.ejb2connector.stateless.Hello;
+import com.ejb2connector.stateless.HelloHome;
 
 import javax.ejb.CreateException;
 import javax.naming.Context;
 import javax.naming.NamingException;
 import java.rmi.RemoteException;
 
-public class checkStateful {
-    public static int getFromStaeful(Context context) throws RemoteException, CreateException, NamingException {
-        HelloHome home;
-        home = (HelloHome) context.lookup("EJB2StatefulJboss");
-        Hello bean;
-        bean = home.create();
-        // invoke on the remote counter bean
-        final int NUM_TIMES = 5;
-        for (int i = 0; i < NUM_TIMES; i++) {
-            bean.increment();
-        }
-        return bean.getCount();
+public class CheckStateless {
+
+    /**
+     * @param context context.
+     * @return sum.
+     * @throws RemoteException
+     * @throws CreateException
+     * @throws NamingException
+     */
+    public static int getFromStateless(Context context) throws RemoteException, CreateException, NamingException {
+        HelloHome home = (HelloHome) context.lookup("EJB2StatelessJboss");
+        Hello bean = home.create();
+        // invoke on the remote calculator
+        int a = 10;
+        int b = 12;
+        int sum = bean.add(a, b);
+        return sum;
     }
 }
