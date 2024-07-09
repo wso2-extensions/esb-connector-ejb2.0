@@ -4,7 +4,7 @@
     "category": "Other",
     "documentationUrl": "https://docs.wso2.com/display/ESBCONNECTORS/EJB2+Connector",
     "description": "EJB2 Connector used to create a client Dynamically from the ESB Configuration and if the method is not a void method then it will add the return value into message context property. it has two methods called Stateless bean and Stateful bean.",
-    "status": "Unsupported",
+    "status": "Active",
     "labels": [
         "connector"
     ],
